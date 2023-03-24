@@ -1,0 +1,11 @@
+u_rm_cm\user_lib.o: ..\USER\algorithm\user_lib.c
+u_rm_cm\user_lib.o: ..\USER\algorithm\user_lib.h
+u_rm_cm\user_lib.o: ..\USER\task\struct_typedef.h
+u_rm_cm\user_lib.o: ..\USER\algorithm\arm_math.h
+u_rm_cm\user_lib.o: ../Drivers/CMSIS/Include/core_cm4.h
+u_rm_cm\user_lib.o: C:\Users\Bay_Max\Keil\core\ARM\ARMCC\Bin\..\include\stdint.h
+u_rm_cm\user_lib.o: ../Drivers/CMSIS/Include/cmsis_version.h
+u_rm_cm\user_lib.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+u_rm_cm\user_lib.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+u_rm_cm\user_lib.o: C:\Users\Bay_Max\Keil\core\ARM\ARMCC\Bin\..\include\string.h
+u_rm_cm\user_lib.o: C:\Users\Bay_Max\Keil\core\ARM\ARMCC\Bin\..\include\math.h
