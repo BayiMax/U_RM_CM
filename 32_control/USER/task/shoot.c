@@ -10,6 +10,7 @@
  */
 #include "shoot.h"
 #include "user_c.h"
+#include "referee.h"
 
 #define shoot_fric1_on(pwm) fric1_on((pwm)) // 摩擦轮1pwm宏定义
 #define shoot_fric2_on(pwm) fric2_on((pwm)) // 摩擦轮2pwm宏定义
@@ -95,8 +96,8 @@ void shoot_init(void)
 int16_t shoot_control_loop(void)
 {
 
-  // shoot_set_mode(); // 设置状态机
-  U_shoot_set_mode();      // user
+  shoot_set_mode(); // 设置状态机
+  // U_shoot_set_mode();      // user
   shoot_feedback_update(); // 更新数据
 
   if (shoot_control.shoot_mode == SHOOT_STOP)
@@ -154,7 +155,7 @@ int16_t shoot_control_loop(void)
   if (shoot_control.shoot_mode == SHOOT_STOP)
   {
     // 关闭激光
-    // shoot_laser_off();
+    shoot_laser_off();
     shoot_control.given_current = 0;
     // 摩擦轮需要一个个斜波开启，不能同时直接开启，否则可能电机不转
     ramp_calc(&shoot_control.fric1_ramp, -SHOOT_FRIC_PWM_ADD_VALUE);
@@ -163,7 +164,7 @@ int16_t shoot_control_loop(void)
   else
   {
     // 激光开启
-    // shoot_laser_on();
+    shoot_laser_on();
     // 计算拨弹轮电机PID
     PID_calc(&shoot_control.trigger_motor_pid, shoot_control.speed, shoot_control.speed_set);
     shoot_control.given_current = (int16_t)(shoot_control.trigger_motor_pid.out);
@@ -312,7 +313,7 @@ static void shoot_set_mode(void)
     }
   }
 
-  //  get_shoot_heat0_limit_and_heat0(&shoot_control.heat_limit, &shoot_control.heat);
+  get_shoot_heat0_limit_and_heat0(&shoot_control.heat_limit, &shoot_control.heat);
 
   if (!toe_is_error(REFEREE_TOE) && (shoot_control.heat + SHOOT_HEAT_REMAIN_VALUE > shoot_control.heat_limit))
   {

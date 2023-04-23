@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b6b73fe-7c6e-431e-98f6-a5e10435d6b5" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/.vscode/c_cpp_properties.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/.vscode/keil-assistant.log" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/.vscode/keil-assistant.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM.uvguix.Bay_Max" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM.uvguix.Bay_Max" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM.uvoptx" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM.uvoptx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM.uvprojx" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM.uvprojx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.axf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.axf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.build_log.htm" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.build_log.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.hex" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.hex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.htm" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.lnp" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.lnp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.map" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM_U_RM_CM.dep" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/U_RM_CM_U_RM_CM.dep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_driver.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_driver.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_driver.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_driver.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_middleware.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_middleware.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_middleware.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/bmi088_middleware.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/buzzer.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/buzzer.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/buzzer.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/buzzer.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/calibrate_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/calibrate_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/calibrate_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/calibrate_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/can_receive.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/can_receive.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/can_receive.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/can_receive.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_behaviour.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_behaviour.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_behaviour.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_behaviour.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_power_control.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_power_control.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_power_control.d" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_power_control.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_power_control.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_power_control.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/chassis_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/delay.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/delay.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/delay.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/delay.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/detect_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/detect_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/detect_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/detect_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/freertos.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/freertos.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/freertos.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/freertos.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_behaviour.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_behaviour.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_behaviour.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_behaviour.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/gimbal_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ins_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ins_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ins_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ins_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver_middleware.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver_middleware.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver_middleware.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/ist8310_driver_middleware.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/led.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/led.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/led.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/led.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/main.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/main.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/power_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/power_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/power_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/power_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote_dma.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote_dma.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote_dma.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/remote_dma.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/rgb_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/rgb_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/rgb_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/rgb_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/servo_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/servo_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/servo_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/servo_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/shoot.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/shoot.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/shoot.d" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/shoot.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/shoot.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/shoot.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/stm32f4xx_it.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/stm32f4xx_it.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/stm32f4xx_it.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/stm32f4xx_it.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/test_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/test_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/test_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/test_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/usb_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/usb_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/usb_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/usb_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_adc.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_adc.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_adc.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_adc.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_can.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_can.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_can.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_can.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_crc32.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_crc32.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_crc32.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_crc32.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_flash.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_flash.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_flash.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_flash.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_fric.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_fric.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_fric.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_fric.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_i2c.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_i2c.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_i2c.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_i2c.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_imu_pwm.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_imu_pwm.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_imu_pwm.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_imu_pwm.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_laser.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_laser.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_laser.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_laser.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_rng.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_rng.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_rng.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_rng.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_servo_pwm.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_servo_pwm.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_servo_pwm.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_servo_pwm.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_spi.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_spi.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_spi.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_spi.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_task.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_task.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_task.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_task.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_usart.crf" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_usart.crf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_usart.o" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/MDK-ARM/U_RM_CM/user_usart.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/Src/freertos.c" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/Src/freertos.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/CAN_receive.h" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/CAN_receive.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/chassis_power_control.c" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/chassis_power_control.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/chassis_power_control.h" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/chassis_power_control.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/chassis_task.h" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/chassis_task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/gimbal_task.h" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/gimbal_task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/shoot.c" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/shoot.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/usb_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/usb_task.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/32_control/USER/task/user_task.c" beforeDir="false" afterPath="$PROJECT_DIR$/32_control/USER/task/user_task.c" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2NPoj6aVZnqnJxcP5PiAV0iAkll" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/Bay_Max/Desktop/RM/U_RM_CM",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="9b6b73fe-7c6e-431e-98f6-a5e10435d6b5" name="变更" comment="" />
+      <created>1679575209964</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679575209964</updated>
+      <workItem from="1679575211378" duration="230000" />
+      <workItem from="1679634745561" duration="607000" />
+      <workItem from="1679812819979" duration="536000" />
+      <workItem from="1682255983788" duration="60000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -40,6 +40,7 @@
     "gimbal_task.h": "c",
     "gimbal_behaviour.h": "c",
     "servo_task.h": "c",
-    "shoot.h": "c"
+    "shoot.h": "c",
+    "referee.h": "c"
   }
 }

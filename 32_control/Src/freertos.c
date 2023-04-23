@@ -139,9 +139,9 @@ void MX_FREERTOS_Init(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-  //  // usb数据发送任务
-  //  osThreadDef(USBTask, usb_task, osPriorityNormal, 0, 128);
-  //  usb_task_handle = osThreadCreate(osThread(USBTask), NULL);
+//  // usb数据发送任务
+//  osThreadDef(USBTask, usb_task, osPriorityNormal, 0, 128);
+//  usb_task_handle = osThreadCreate(osThread(USBTask), NULL);
 
   // 电池电量检测任务
   osThreadDef(BATTERY_VOLTAGE, battery_voltage_task, osPriorityNormal, 0, 128);
@@ -167,9 +167,9 @@ void MX_FREERTOS_Init(void)
   osThreadDef(gimbalTask, gimbal_task, osPriorityHigh, 0, 512);
   gimbalTaskHandle = osThreadCreate(osThread(gimbalTask), NULL);
 
-// 舵机任务 未知 : o0?
-//  osThreadDef(SERVO, servo_task, osPriorityNormal, 0, 128);
-//  servo_task_handle = osThreadCreate(osThread(SERVO), NULL);
+	// 舵机任务 未知 : o0?
+  osThreadDef(SERVO, servo_task, osPriorityNormal, 0, 128);
+  servo_task_handle = osThreadCreate(osThread(SERVO), NULL);
 
   // 测试任务
   osThreadDef(UserTest_Task, usere_test_task, osPriorityNormal, 0, 1024);

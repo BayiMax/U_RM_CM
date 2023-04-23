@@ -19,7 +19,9 @@
 /* CAN数据发送 硬件ID*/
 typedef enum
 {
+  //底盘ID
   CAN_CHASSIS_ALL_ID = 0x200,
+  //
   CAN_3508_M1_ID = 0x201,
   CAN_3508_M2_ID = 0x202,
   CAN_3508_M3_ID = 0x203,

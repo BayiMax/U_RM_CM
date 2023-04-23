@@ -63,8 +63,11 @@
 // 任务初始化 空闲一段时间
 #define GIMBAL_TASK_INIT_TIME 201
 // yaw,pitch控制通道以及状态开关通道
-#define YAW_CHANNEL 2
-#define PITCH_CHANNEL 3
+
+// 切换左右手 01-23
+
+#define YAW_CHANNEL 0
+#define PITCH_CHANNEL 1
 #define GIMBAL_MODE_CHANNEL 0
 
 // 掉头180 按键

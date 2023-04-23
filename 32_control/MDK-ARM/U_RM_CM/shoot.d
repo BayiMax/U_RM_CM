@@ -113,3 +113,5 @@ u_rm_cm\shoot.o: C:\Users\Bay_Max\Keil\core\ARM\ARMCC\Bin\..\include\stdlib.h
 u_rm_cm\shoot.o: ..\USER\algorithm\mem_mang.h
 u_rm_cm\shoot.o: ..\USER\algorithm\macro_mutex.h
 u_rm_cm\shoot.o: ..\USER\algorithm\AHRS.h
+u_rm_cm\shoot.o: ..\USER\task\referee.h
+u_rm_cm\shoot.o: ..\USER\task\protocol.h

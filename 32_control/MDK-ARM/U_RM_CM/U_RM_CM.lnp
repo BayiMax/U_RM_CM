@@ -51,6 +51,7 @@
 "u_rm_cm\gimbal_task.o"
 "u_rm_cm\servo_task.o"
 "u_rm_cm\shoot.o"
+"u_rm_cm\referee.o"
 "u_rm_cm\ahrs_middleware.o"
 "u_rm_cm\crc8_crc16.o"
 "u_rm_cm\fifo.o"
