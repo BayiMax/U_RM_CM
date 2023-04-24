@@ -29,7 +29,10 @@ typedef enum
 
   CHASSIS_NO_FOLLOW_YAW, // 底盘不跟随角度，角度是开环的，但轮子是有速度环
 
-  CHASSIS_OPEN //  遥控器的值乘以比例成电流值 直接发送到can总线上
+  CHASSIS_OPEN, //  遥控器的值乘以比例成电流值 直接发送到can总线上
+
+  CHASSIS_SPIN,
+
 } chassis_behaviour_e;
 
 #define CHASSIS_OPEN_RC_SCALE 10 // 在chassis_open 模型下，遥控器乘以该比例发送到can上

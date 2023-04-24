@@ -32,7 +32,6 @@
 // 切换左右手后 通道改变 2-0
 #define CHASSIS_WZ_CHANNEL 0
 
-
 // 选择底盘状态 开关通道号
 #define CHASSIS_MODE_CHANNEL 0
 
@@ -74,6 +73,7 @@
 
 // 底盘摇摆按键
 #define SWING_KEY KEY_PRESSED_OFFSET_CTRL
+// 底盘摇摆按键改为底盘旋转 TODO
 
 // 底盘前后左右控制按键
 #define CHASSIS_FRONT_KEY KEY_PRESSED_OFFSET_W
@@ -126,6 +126,8 @@ typedef enum
   CHASSIS_VECTOR_NO_FOLLOW_YAW,
   // 控制电流直接发送到can总线
   CHASSIS_VECTOR_RAW,
+  // 原地旋转
+  CHASSIS_SPIN_chassis_mode_e,
 } chassis_mode_e;
 
 typedef struct

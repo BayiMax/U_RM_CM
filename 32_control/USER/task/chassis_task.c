@@ -204,6 +204,12 @@ static void B_Chassis_Mode_Change_Control_Transit(chassis_move_t *chassis_move_t
   {
     chassis_move_transit->chassis_yaw_set = chassis_move_transit->chassis_yaw;
   }
+  /**************************************************************************************************************/
+  else if ((chassis_move_transit->last_chassis_mode != CHASSIS_SPIN_chassis_mode_e) && chassis_move_transit->chassis_mode == CHASSIS_SPIN_chassis_mode_e)
+  {
+    chassis_move_transit->chassis_yaw_set = chassis_move_transit->chassis_yaw;
+  }
+  /**************************************************************************************************************/
 
   chassis_move_transit->last_chassis_mode = chassis_move_transit->chassis_mode;
 }
@@ -366,6 +372,15 @@ static void B_Chassis_Set_Contorl(chassis_move_t *chassis_move_control)
     chassis_move_control->vx_set = fp32_constrain(vx_set, chassis_move_control->vx_min_speed, chassis_move_control->vx_max_speed);
     chassis_move_control->vy_set = fp32_constrain(vy_set, chassis_move_control->vy_min_speed, chassis_move_control->vy_max_speed);
   }
+  /********************************************************************************************************/
+  else if (chassis_move_control->chassis_mode == CHASSIS_SPIN_chassis_mode_e)
+  {
+    // “angle_set” 是旋转速度控制
+    chassis_move_control->wz_set = angle_set;
+    chassis_move_control->vx_set = fp32_constrain(vx_set, chassis_move_control->vx_min_speed, chassis_move_control->vx_max_speed);
+    chassis_move_control->vy_set = fp32_constrain(vy_set, chassis_move_control->vy_min_speed, chassis_move_control->vy_max_speed);
+  }
+  /********************************************************************************************************/
   else if (chassis_move_control->chassis_mode == CHASSIS_VECTOR_RAW)
   {
     // 在原始模式，设置值是发送到CAN总线
@@ -457,4 +472,3 @@ static void B_Chassis_Control_Loop(chassis_move_t *chassis_move_control_loop)
     chassis_move_control_loop->motor_chassis[i].give_current = (int16_t)(chassis_move_control_loop->motor_speed_pid[i].out);
   }
 }
-

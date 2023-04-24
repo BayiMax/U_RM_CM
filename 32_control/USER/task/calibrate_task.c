@@ -159,7 +159,6 @@ void calibrate_task(void const *pvParameters)
       {
         if (cali_sensor[i].cali_hook != NULL)
         {
-
           if (cali_sensor[i].cali_hook(cali_sensor_buf[i], CALI_FUNC_CMD_ON))
           {
             // done

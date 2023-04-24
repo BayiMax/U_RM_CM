@@ -78,7 +78,6 @@ typedef enum
 
 typedef __packed struct
 {
-
   uint8_t name[3];                                  // device name
   uint8_t cali_done;                                // 0x55 means has been calibrated
   uint8_t flash_len : 7;                            // buf lenght

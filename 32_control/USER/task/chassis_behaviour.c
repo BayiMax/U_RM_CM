@@ -104,6 +104,17 @@ static void chassis_no_follow_yaw_control(fp32 *vx_set, fp32 *vy_set, fp32 *wz_s
  */
 static void chassis_open_set_control(fp32 *vx_set, fp32 *vy_set, fp32 *wz_set, chassis_move_t *chassis_move_rc_to_vector);
 
+/**************************************************************************************************************/
+/**
+ * @brief 原地旋转
+ *
+ * @param vx_set x轴速度
+ * @param vy_set y轴速度
+ * @param wz_set 旋转速度
+ * @param chassis_move_rc_to_vector 控制结构体
+ */
+static void chassis_spin_control(fp32 *vx_set, fp32 *vy_set, fp32 *wz_set, chassis_move_t *chassis_move_rc_to_vector);
+/**************************************************************************************************************/
 // 留意，这个底盘行为模式变量
 chassis_behaviour_e chassis_behaviour_mode = CHASSIS_ZERO_FORCE;
 
@@ -120,7 +131,8 @@ void chassis_behaviour_mode_set(chassis_move_t *chassis_move_mode)
   }
 
   // 遥控器设置模式
-  // 底盘和云台各转各的 云台转速高于底盘
+
+  // 底盘跟随云台转动
   if (switch_is_mid(chassis_move_mode->chassis_RC->rc.s[CHASSIS_MODE_CHANNEL]))
   {
     // can change to CHASSIS_ZERO_FORCE,CHASSIS_NO_MOVE,CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW,
@@ -133,18 +145,18 @@ void chassis_behaviour_mode_set(chassis_move_t *chassis_move_mode)
   {
     chassis_behaviour_mode = CHASSIS_NO_MOVE;
   }
-  // 底盘跟随云台转动
+  /**************************************************************************************************************/
+  // 当拨到最上时 底盘原地旋转
   else if (switch_is_up(chassis_move_mode->chassis_RC->rc.s[CHASSIS_MODE_CHANNEL]))
   {
-    chassis_behaviour_mode = CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW;
+    chassis_behaviour_mode = CHASSIS_SPIN;
   }
+  /**************************************************************************************************************/
   // 当云台在某些模式下，像初始化， 底盘不动
   if (gimbal_cmd_to_chassis_stop())
   {
     chassis_behaviour_mode = CHASSIS_NO_MOVE;
   }
-
-  // 添加自己的逻辑判断进入新模式
 
   // 根据行为模式选择一个底盘控制模式
   // 不动
@@ -174,6 +186,13 @@ void chassis_behaviour_mode_set(chassis_move_t *chassis_move_mode)
   {
     chassis_move_mode->chassis_mode = CHASSIS_VECTOR_RAW;
   }
+  /**************************************************************************************************************/
+  // 旋转
+  else if (chassis_behaviour_mode == CHASSIS_SPIN)
+  {
+    chassis_move_mode->chassis_mode = CHASSIS_SPIN_chassis_mode_e;
+  }
+  /**************************************************************************************************************/
 }
 
 /**
@@ -216,8 +235,33 @@ void chassis_behaviour_control_set(fp32 *vx_set, fp32 *vy_set, fp32 *angle_set, 
   {
     chassis_open_set_control(vx_set, vy_set, angle_set, chassis_move_rc_to_vector);
   }
+  /**************************************************************************************************************/
+  else if (chassis_behaviour_mode == CHASSIS_SPIN)
+  {
+    chassis_spin_control(vx_set, vy_set, angle_set, chassis_move_rc_to_vector);
+  }
+  /**************************************************************************************************************/
 }
+/**************************************************************************************************************/
+/**
+ * @brief 原地旋转
+ *
+ * @param vx_set x轴速度
+ * @param vy_set y轴速度
+ * @param wz_set 旋转速度
+ * @param chassis_move_rc_to_vector 控制结构体
+ */
+static void chassis_spin_control(fp32 *vx_set, fp32 *vy_set, fp32 *wz_set, chassis_move_t *chassis_move_rc_to_vector)
+{
+  if (vx_set == NULL || vy_set == NULL || wz_set == NULL || chassis_move_rc_to_vector == NULL)
+  {
+    return;
+  }
+  chassis_rc_to_control_vector(vx_set, vy_set, chassis_move_rc_to_vector);
 
+  *wz_set = 6.6;
+}
+/**************************************************************************************************************/
 /**
  * @brief          底盘无力的行为状态机下，底盘模式是raw，故而设定值会直接发送到can总线上故而将设定值都设置为0
  * @author         RM
@@ -287,19 +331,19 @@ static void chassis_infantry_follow_gimbal_yaw_control(fp32 *vx_set, fp32 *vy_se
 
   static uint8_t swing_flag = 0;
 
-  // 判断是否要摇摆
-  if (chassis_move_rc_to_vector->chassis_RC->key.v & SWING_KEY)
-  {
-    if (swing_flag == 0)
-    {
-      swing_flag = 1;
-      swing_time = 0.0f;
-    }
-  }
-  else
-  {
-    swing_flag = 0;
-  }
+  // // 判断是否要摇摆
+  // if (chassis_move_rc_to_vector->chassis_RC->key.v & SWING_KEY)
+  // {
+  //   if (swing_flag == 0)
+  //   {
+  //     swing_flag = 1;
+  //     swing_time = 0.0f;
+  //   }
+  // }
+  // else
+  // {
+  //   swing_flag = 0;
+  // }
 
   // 判断键盘输入是不是在控制底盘运动，底盘在运动减小摇摆角度
   if (chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_FRONT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_BACK_KEY ||
