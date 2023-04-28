@@ -27,6 +27,7 @@
  * @param[in]      chassis_power_control: 底盘数据
  * @retval         none
  */
+uint8_t robot_id;
 void chassis_power_control(chassis_move_t *chassis_power_control)
 {
   fp32 chassis_power = 0.0f;
@@ -34,7 +35,7 @@ void chassis_power_control(chassis_move_t *chassis_power_control)
   fp32 total_current_limit = 0.0f;
   fp32 total_current = 0.0f;
 
-  uint8_t robot_id = get_robot_id();
+  robot_id = get_robot_id();
 
   if (toe_is_error(REFEREE_TOE))
   {
@@ -94,7 +95,6 @@ void chassis_power_control(chassis_move_t *chassis_power_control)
   }
 
   total_current = 0.0f;
-  // calculate the original motor current set
   // 计算原本电机电流设定
   for (uint8_t i = 0; i < 4; i++)
   {

@@ -41,6 +41,9 @@
     "gimbal_behaviour.h": "c",
     "servo_task.h": "c",
     "shoot.h": "c",
-    "referee.h": "c"
+    "referee.h": "c",
+    "referee_task.h": "c",
+    "user_draw.h": "c",
+    "crc8_crc16.h": "c"
   }
 }

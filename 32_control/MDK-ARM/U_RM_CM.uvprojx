@@ -1339,6 +1339,11 @@
           <GroupName>task</GroupName>
           <Files>
             <File>
+              <FileName>user_draw.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\task\user_draw.c</FilePath>
+            </File>
+            <File>
               <FileName>usb_task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\task\usb_task.c</FilePath>
@@ -1364,14 +1369,14 @@
               <FilePath>..\USER\task\INS_task.c</FilePath>
             </File>
             <File>
-              <FileName>calibrate_task.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\USER\task\calibrate_task.c</FilePath>
-            </File>
-            <File>
               <FileName>CAN_receive.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\task\CAN_receive.c</FilePath>
+            </File>
+            <File>
+              <FileName>calibrate_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\task\calibrate_task.c</FilePath>
             </File>
             <File>
               <FileName>chassis_power_control.c</FileName>
@@ -1382,16 +1387,6 @@
               <FileName>chassis_task.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\task\chassis_task.c</FilePath>
-            </File>
-            <File>
-              <FileName>test_task.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\USER\task\test_task.c</FilePath>
-            </File>
-            <File>
-              <FileName>user_task.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\USER\task\user_task.c</FilePath>
             </File>
             <File>
               <FileName>chassis_behaviour.c</FileName>
@@ -1409,11 +1404,6 @@
               <FilePath>..\USER\task\gimbal_task.c</FilePath>
             </File>
             <File>
-              <FileName>servo_task.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\USER\task\servo_task.c</FilePath>
-            </File>
-            <File>
               <FileName>shoot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\task\shoot.c</FilePath>
@@ -1422,6 +1412,26 @@
               <FileName>referee.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\USER\task\referee.c</FilePath>
+            </File>
+            <File>
+              <FileName>referee_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\task\referee_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>servo_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\task\servo_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>user_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\task\user_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>test_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\USER\task\test_task.c</FilePath>
             </File>
           </Files>
         </Group>

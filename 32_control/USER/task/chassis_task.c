@@ -122,8 +122,10 @@ static void B_Chassis_Init(chassis_move_t *chassis_move_init)
   const static fp32 chassis_y_order_filter[1] = {CHASSIS_ACCEL_Y_NUM};
   uint8_t i;
 
-  // 底盘开机状态为 :底盘有旋转速度控制
-  chassis_move_init->chassis_mode = CHASSIS_VECTOR_RAW;
+  // 底盘开机状态为 :底盘有旋转速度控制 TODO:
+  // 改为底盘跟随云台
+  chassis_move_init->chassis_mode = CHASSIS_VECTOR_NO_FOLLOW_YAW;
+
   // 获取遥控器指针
   chassis_move_init->chassis_RC = get_remote_control_point();
 
@@ -344,10 +346,16 @@ static void B_Chassis_Set_Contorl(chassis_move_t *chassis_move_control)
     cos_yaw = arm_cos_f32(-chassis_move_control->chassis_yaw_motor->relative_angle);
     chassis_move_control->vx_set = cos_yaw * vx_set + sin_yaw * vy_set;
     chassis_move_control->vy_set = -sin_yaw * vx_set + cos_yaw * vy_set;
-    // 设置控制相对云台角度
-    chassis_move_control->chassis_relative_angle_set = rad_format(angle_set);
-    // 计算旋转PID角速度
-    chassis_move_control->wz_set = -PID_calc(&chassis_move_control->chassis_angle_pid, chassis_move_control->chassis_yaw_motor->relative_angle, chassis_move_control->chassis_relative_angle_set);
+
+    // // 设置控制相对云台角度 TODO:
+    // chassis_move_control->chassis_relative_angle_set = rad_format(angle_set);
+    // // 计算旋转PID角速度
+    // chassis_move_control->wz_set = -PID_calc(&chassis_move_control->chassis_angle_pid, chassis_move_control->chassis_yaw_motor->relative_angle, chassis_move_control->chassis_relative_angle_set);
+    /***************************************************************************************/
+
+    chassis_move_control->wz_set = angle_set;
+
+    /***************************************************************************************/
 
     // 速度限幅
     chassis_move_control->vx_set = fp32_constrain(chassis_move_control->vx_set, chassis_move_control->vx_min_speed, chassis_move_control->vx_max_speed);
@@ -463,8 +471,8 @@ static void B_Chassis_Control_Loop(chassis_move_t *chassis_move_control_loop)
     PID_calc(&chassis_move_control_loop->motor_speed_pid[i], chassis_move_control_loop->motor_chassis[i].speed, chassis_move_control_loop->motor_chassis[i].speed_set);
   }
 
-  //  // 功率控制
-  //  chassis_power_control(chassis_move_control_loop);
+   // 功率控制 TODO:
+   chassis_power_control(chassis_move_control_loop);
 
   // 赋值电流值
   for (i = 0; i < 4; i++)

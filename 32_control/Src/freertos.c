@@ -43,6 +43,12 @@ osThreadId calibrate_tast_handle;
 
 osThreadId gimbalTaskHandle;
 osThreadId servo_task_handle;
+
+osThreadId referee_task_handle;
+osThreadId detect_handle;
+
+/*绘图*/
+osThreadId draw_handle;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -139,9 +145,25 @@ void MX_FREERTOS_Init(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-//  // usb数据发送任务
-//  osThreadDef(USBTask, usb_task, osPriorityNormal, 0, 128);
-//  usb_task_handle = osThreadCreate(osThread(USBTask), NULL);
+  //  // usb数据发送任务
+  //  osThreadDef(USBTask, usb_task, osPriorityNormal, 0, 128);
+  //  usb_task_handle = osThreadCreate(osThread(USBTask), NULL);
+
+  // 校准任务
+  osThreadDef(cali, calibrate_task, osPriorityNormal, 0, 512);
+  calibrate_tast_handle = osThreadCreate(osThread(cali), NULL);
+
+  // 错误检测
+  osThreadDef(DETECT, detect_task, osPriorityNormal, 0, 256);
+  detect_handle = osThreadCreate(osThread(DETECT), NULL);
+
+  // 裁判系统任务
+  osThreadDef(referee, referee_usart_task, osPriorityNormal, 0, 128);
+  referee_task_handle = osThreadCreate(osThread(referee), NULL);
+
+  // 绘制UI任务
+  // osThreadDef(draw, draw_UI_task, osPriorityNormal, 0, 128);
+  // draw_handle = osThreadCreate(osThread(draw), NULL);
 
   // 电池电量检测任务
   osThreadDef(BATTERY_VOLTAGE, battery_voltage_task, osPriorityNormal, 0, 128);
@@ -159,21 +181,17 @@ void MX_FREERTOS_Init(void)
   osThreadDef(ChassisTask, chassis_task, osPriorityAboveNormal, 0, 512);
   chassisTaskHandle = osThreadCreate(osThread(ChassisTask), NULL);
 
-  // 校准任务
-  osThreadDef(cali, calibrate_task, osPriorityNormal, 0, 512);
-  calibrate_tast_handle = osThreadCreate(osThread(cali), NULL);
-
   // 云台任务
   osThreadDef(gimbalTask, gimbal_task, osPriorityHigh, 0, 512);
   gimbalTaskHandle = osThreadCreate(osThread(gimbalTask), NULL);
 
-	// 舵机任务 未知 : o0?
+  // 舵机任务
   osThreadDef(SERVO, servo_task, osPriorityNormal, 0, 128);
   servo_task_handle = osThreadCreate(osThread(SERVO), NULL);
 
-  // 测试任务
-  osThreadDef(UserTest_Task, usere_test_task, osPriorityNormal, 0, 1024);
-  usb_task_handle = osThreadCreate(osThread(UserTest_Task), NULL);
+  //  // 测试任务
+  //  osThreadDef(UserTest_Task, usere_test_task, osPriorityNormal, 0, 1024);
+  //  usb_task_handle = osThreadCreate(osThread(UserTest_Task), NULL);
 
   /* USER CODE END RTOS_THREADS */
 }

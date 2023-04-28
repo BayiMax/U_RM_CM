@@ -145,13 +145,23 @@ void chassis_behaviour_mode_set(chassis_move_t *chassis_move_mode)
   {
     chassis_behaviour_mode = CHASSIS_NO_MOVE;
   }
+
   /**************************************************************************************************************/
   // 当拨到最上时 底盘原地旋转
+  // else if (switch_is_up(chassis_move_mode->chassis_RC->rc.s[CHASSIS_MODE_CHANNEL]))
+  // {
+  //   chassis_behaviour_mode = CHASSIS_SPIN;
+  // }
+  /**************************************************************************************************************/
+
+  /**************************************************************************************************************/
+  // 底盘跟随云台转动
   else if (switch_is_up(chassis_move_mode->chassis_RC->rc.s[CHASSIS_MODE_CHANNEL]))
   {
-    chassis_behaviour_mode = CHASSIS_SPIN;
+    chassis_behaviour_mode = CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW;
   }
   /**************************************************************************************************************/
+
   // 当云台在某些模式下，像初始化， 底盘不动
   if (gimbal_cmd_to_chassis_stop())
   {
@@ -169,6 +179,7 @@ void chassis_behaviour_mode_set(chassis_move_t *chassis_move_mode)
   {
     chassis_move_mode->chassis_mode = CHASSIS_VECTOR_NO_FOLLOW_YAW;
   }
+  // 底盘跟随云台
   else if (chassis_behaviour_mode == CHASSIS_INFANTRY_FOLLOW_GIMBAL_YAW)
   {
     chassis_move_mode->chassis_mode = CHASSIS_VECTOR_FOLLOW_GIMBAL_YAW;
@@ -319,19 +330,56 @@ static void chassis_infantry_follow_gimbal_yaw_control(fp32 *vx_set, fp32 *vy_se
   }
   // 遥控器的通道值以及键盘按键 得出 一般情况下的速度设定值
   chassis_rc_to_control_vector(vx_set, vy_set, chassis_move_rc_to_vector);
-  // 摇摆角度是利用sin函数生成，swing_time 是sin函数的输入值
-  static fp32 swing_time = 0.0f;
 
-  static fp32 swing_angle = 0.0f;
-  // max_angle 是sin函数的幅值
-  static fp32 max_angle = SWING_NO_MOVE_ANGLE;
+  static fp32 spin_size = 0.0f;
+  static int add_time = 0;
+  static uint8_t spin_flag = 0;
 
-  // swing_time 在一个控制周期内，加上 add_time
-  static fp32 const add_time = PI * 0.5f * configTICK_RATE_HZ / CHASSIS_CONTROL_TIME_MS;
+  if (chassis_move_rc_to_vector->chassis_RC->key.v & SWING_KEY)
+  {
+    // if (spin_flag == 0)
+    // {
+    // spin_flag = 1;
+    spin_size = 6.0f;
+    // }
+  }
+  else
+  {
+    spin_size = 0.0f;
+  }
+  // 判断键盘输入是不是在控制底盘运动，底盘在运动 不转
+  if (chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_FRONT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_BACK_KEY ||
+      chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_LEFT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_RIGHT_KEY)
+  {
+    spin_size = 0;
+  }
+  // if (spin_flag)
+  // {
+  //   // // 任务运行2000次
+  //   // if (add_time > 200)
+  //   // {
+  //   //   add_time = 0;
+  //   //   srand((unsigned)time(NULL) + (unsigned)rand());
+  //   //   spin_size = rand() % 6;
+  //   // }
+  //   spin_size = 6.0f;
+  // }
+  add_time++;
+  *angle_set = spin_size;
+  /**************************************************************************************************/
+  // // 摇摆角度是利用sin函数生成，swing_time 是sin函数的输入值
+  // static fp32 swing_time = 0.0f;
 
-  static uint8_t swing_flag = 0;
+  // static fp32 swing_angle = 0.0f;
+  // // max_angle 是sin函数的幅值
+  // static fp32 max_angle = SWING_NO_MOVE_ANGLE;
 
-  // // 判断是否要摇摆
+  // // swing_time 在一个控制周期内，加上 add_time
+  // static fp32 const add_time = PI * 0.5f * configTICK_RATE_HZ / CHASSIS_CONTROL_TIME_MS;
+
+  // static uint8_t swing_flag = 0;
+
+  // // 判断是否要摇摆 按下CTRL
   // if (chassis_move_rc_to_vector->chassis_RC->key.v & SWING_KEY)
   // {
   //   if (swing_flag == 0)
@@ -345,32 +393,32 @@ static void chassis_infantry_follow_gimbal_yaw_control(fp32 *vx_set, fp32 *vy_se
   //   swing_flag = 0;
   // }
 
-  // 判断键盘输入是不是在控制底盘运动，底盘在运动减小摇摆角度
-  if (chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_FRONT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_BACK_KEY ||
-      chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_LEFT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_RIGHT_KEY)
-  {
-    max_angle = SWING_MOVE_ANGLE;
-  }
-  else
-  {
-    max_angle = SWING_NO_MOVE_ANGLE;
-  }
+  // // 判断键盘输入是不是在控制底盘运动，底盘在运动减小摇摆角度
+  // if (chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_FRONT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_BACK_KEY ||
+  //     chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_LEFT_KEY || chassis_move_rc_to_vector->chassis_RC->key.v & CHASSIS_RIGHT_KEY)
+  // {
+  //   max_angle = SWING_MOVE_ANGLE;
+  // }
+  // else
+  // {
+  //   max_angle = SWING_NO_MOVE_ANGLE;
+  // }
 
-  if (swing_flag)
-  {
-    swing_angle = max_angle * arm_sin_f32(swing_time);
-    swing_time += add_time;
-  }
-  else
-  {
-    swing_angle = 0.0f;
-  }
-  // sin函数不超过2pi
-  if (swing_time > 2 * PI)
-  {
-    swing_time -= 2 * PI;
-  }
-  *angle_set = swing_angle;
+  // if (swing_flag)
+  // {
+  //   swing_angle = max_angle * arm_sin_f32(swing_time);
+  //   swing_time += add_time;
+  // }
+  // else
+  // {
+  //   swing_angle = 0.0f;
+  // }
+  // // sin函数不超过2pi
+  // if (swing_time > 2 * PI)
+  // {
+  //   swing_time -= 2 * PI;
+  // }
+  // *angle_set = swing_angle;
 }
 
 /**

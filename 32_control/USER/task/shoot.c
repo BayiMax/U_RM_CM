@@ -73,8 +73,8 @@ void shoot_init(void)
   PID_init(&shoot_control.trigger_motor_pid, PID_POSITION, Trigger_speed_pid, TRIGGER_READY_PID_MAX_OUT, TRIGGER_READY_PID_MAX_IOUT);
   // 更新数据
   shoot_feedback_update();
-  ramp_init(&shoot_control.fric1_ramp, SHOOT_CONTROL_TIME * 0.001f, FRIC_DOWN, FRIC_OFF);
-  ramp_init(&shoot_control.fric2_ramp, SHOOT_CONTROL_TIME * 0.001f, FRIC_DOWN, FRIC_OFF);
+  ramp_init(&shoot_control.fric1_ramp, SHOOT_CONTROL_TIME * 0.001f, FRIC_MAX, FRIC_OFF);
+  ramp_init(&shoot_control.fric2_ramp, SHOOT_CONTROL_TIME * 0.001f, FRIC_MAX, FRIC_OFF);
   // 初始化 射击控制结构体
   shoot_control.fric_pwm1 = FRIC_OFF;
   shoot_control.fric_pwm2 = FRIC_OFF;
@@ -322,6 +322,7 @@ static void shoot_set_mode(void)
       shoot_control.shoot_mode = SHOOT_READY_BULLET;
     }
   }
+
   // 如果云台状态是 无力状态，就关闭射击
   if (gimbal_cmd_to_shoot_stop())
   {
@@ -337,7 +338,6 @@ static void shoot_set_mode(void)
  */
 static void shoot_feedback_update(void)
 {
-
   static fp32 speed_fliter_1 = 0.0f;
   static fp32 speed_fliter_2 = 0.0f;
   static fp32 speed_fliter_3 = 0.0f;
@@ -374,12 +374,15 @@ static void shoot_feedback_update(void)
   shoot_control.angle = (shoot_control.ecd_count * ECD_RANGE + shoot_control.shoot_motor_measure->ecd) * MOTOR_ECD_TO_ANGLE;
   // 微动开关
   shoot_control.key = BUTTEN_TRIG_PIN;
+
   // 鼠标按键
   shoot_control.last_press_l = shoot_control.press_l;
   shoot_control.last_press_r = shoot_control.press_r;
   shoot_control.press_l = shoot_control.shoot_rc->mouse.press_l;
   shoot_control.press_r = shoot_control.shoot_rc->mouse.press_r;
+
   // 长按计时
+  // 鼠标左键按下
   if (shoot_control.press_l)
   {
     if (shoot_control.press_l_time < PRESS_LONG_TIME)
@@ -391,7 +394,7 @@ static void shoot_feedback_update(void)
   {
     shoot_control.press_l_time = 0;
   }
-
+  // 鼠标右键按下
   if (shoot_control.press_r)
   {
     if (shoot_control.press_r_time < PRESS_LONG_TIME)
@@ -405,17 +408,18 @@ static void shoot_feedback_update(void)
   }
 
   // 射击开关下档时间计时
-  if (shoot_control.shoot_mode != SHOOT_STOP && switch_is_down(shoot_control.shoot_rc->rc.s[SHOOT_RC_MODE_CHANNEL]))
-  {
-    if (shoot_control.rc_s_time < RC_S_LONG_TIME)
-    {
-      shoot_control.rc_s_time++;
-    }
-  }
-  else
-  {
-    shoot_control.rc_s_time = 0;
-  }
+  // 遥控器左侧拨到下档,连续发射弹丸 TODO:
+  // if (shoot_control.shoot_mode != SHOOT_STOP && switch_is_down(shoot_control.shoot_rc->rc.s[SHOOT_RC_MODE_CHANNEL]))
+  // {
+  //   if (shoot_control.rc_s_time < RC_S_LONG_TIME)
+  //   {
+  //     shoot_control.rc_s_time++;
+  //   }
+  // }
+  // else
+  // {
+  //   shoot_control.rc_s_time = 0;
+  // }
 
   // 鼠标右键按下加速摩擦轮，使得左键低速射击， 右键高速射击
   static uint16_t up_time = 0;
@@ -423,7 +427,7 @@ static void shoot_feedback_update(void)
   {
     up_time = UP_ADD_TIME;
   }
-
+  // 任务执行过快 此处时间使摩擦轮响应一段时间
   if (up_time > 0)
   {
     shoot_control.fric1_ramp.max_value = FRIC_UP;
@@ -438,7 +442,7 @@ static void shoot_feedback_update(void)
 }
 /**
  * @brief 堵转倒转处理
- *
+ * 700ms 确定其堵转
  */
 static void trigger_motor_turn_back(void)
 {
@@ -479,6 +483,7 @@ static void shoot_bullet_control(void)
     shoot_control.set_angle = rad_format(shoot_control.angle + PI_TEN);
     shoot_control.move_flag = 1;
   }
+  // 检查是否有弹丸经过
   if (shoot_control.key == SWITCH_TRIGGER_OFF)
   {
     shoot_control.shoot_mode = SHOOT_DONE;

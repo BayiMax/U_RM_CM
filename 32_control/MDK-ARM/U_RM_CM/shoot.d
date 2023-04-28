@@ -102,6 +102,8 @@ u_rm_cm\shoot.o: ..\USER\task\gimbal_behaviour.h
 u_rm_cm\shoot.o: ..\USER\task\detect_task.h
 u_rm_cm\shoot.o: ..\USER\task\calibrate_task.h
 u_rm_cm\shoot.o: ..\USER\task\servo_task.h
+u_rm_cm\shoot.o: ..\USER\task\referee_task.h
+u_rm_cm\shoot.o: ..\USER\task\user_draw.h
 u_rm_cm\shoot.o: ..\USER\APP\BMI088_driver.h
 u_rm_cm\shoot.o: ..\USER\APP\BMI088_Middleware.h
 u_rm_cm\shoot.o: ..\USER\APP\ist8310_driver.h

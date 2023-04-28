@@ -47,6 +47,9 @@
 #include "calibrate_task.h"
 #include "servo_task.h"
 #include "shoot.h"
+#include "referee_task.h"
+
+#include "user_draw.h"
 
 // APP
 #include "BMI088_driver.h"

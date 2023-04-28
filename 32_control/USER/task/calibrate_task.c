@@ -63,7 +63,7 @@ static void RC_cmd_to_calibrate(void);
  * @retval         none
  */
 static void cali_data_read(void);
-
+ 
 /**
  * @brief          往flash写入校准数据
  * @param[in]      none
@@ -507,7 +507,7 @@ static bool_t cali_gyro_hook(uint32_t *cali, bool_t cmd)
     }
     else
     {
-      gyro_cali_disable_control(); // disable the remote control to make robot no move
+      gyro_cali_disable_control(); // 车静止
       imu_start_buzzer();
 
       return 0;
