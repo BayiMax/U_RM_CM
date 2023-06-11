@@ -86,12 +86,12 @@ typedef __packed struct
 } ext_referee_warning_t;
 typedef __packed struct // 0x0201
 {
-  uint8_t robot_id;
+  uint8_t robot_id; // 本机器人ID
   uint8_t robot_level;
-  uint16_t remain_HP;
-  uint16_t max_HP;
-  uint16_t shooter_heat0_cooling_rate;
-  uint16_t shooter_heat0_cooling_limit;
+  uint16_t remain_HP;                   // 血条
+  uint16_t max_HP;                      // 剩余血条
+  uint16_t shooter_heat0_cooling_rate;  // 冷却值/s
+  uint16_t shooter_heat0_cooling_limit; // 热量上限
   uint16_t shooter_heat1_cooling_rate;
   uint16_t shooter_heat1_cooling_limit;
   uint8_t mains_power_gimbal_output : 1;

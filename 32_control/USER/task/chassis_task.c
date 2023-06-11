@@ -471,8 +471,8 @@ static void B_Chassis_Control_Loop(chassis_move_t *chassis_move_control_loop)
     PID_calc(&chassis_move_control_loop->motor_speed_pid[i], chassis_move_control_loop->motor_chassis[i].speed, chassis_move_control_loop->motor_chassis[i].speed_set);
   }
 
-   // 功率控制 TODO:
-   chassis_power_control(chassis_move_control_loop);
+  // 功率控制 TODO:
+  chassis_power_control(chassis_move_control_loop);
 
   // 赋值电流值
   for (i = 0; i < 4; i++)

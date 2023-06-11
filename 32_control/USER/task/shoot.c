@@ -315,7 +315,11 @@ static void shoot_set_mode(void)
 
   get_shoot_heat0_limit_and_heat0(&shoot_control.heat_limit, &shoot_control.heat);
 
-  if (!toe_is_error(REFEREE_TOE) && (shoot_control.heat + SHOOT_HEAT_REMAIN_VALUE > shoot_control.heat_limit))
+  /**TODO:*/
+  // 步兵枪口热量上限,280
+  // if (!toe_is_error(REFEREE_TOE) && (shoot_control.heat + SHOOT_HEAT_REMAIN_VALUE > shoot_control.heat_limit))
+  /*TODO:*/
+  if (!toe_is_error(REFEREE_TOE) && (shoot_control.heat + SHOOT_HEAT_REMAIN_VALUE > 280))
   {
     if (shoot_control.shoot_mode == SHOOT_BULLET || shoot_control.shoot_mode == SHOOT_CONTINUE_BULLET)
     {
